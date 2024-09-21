@@ -74,10 +74,18 @@ function transcribeAudio(file) {
 
 // Convert plain text to Markdown
 function convertToMarkdown(text) {
-    // Simple conversion: You can enhance this function based on requirements.
-    // For example, adding headers, lists, etc., based on specific patterns.
-    // Here, we'll just return the plain text.
-    return text;
+    let markdown = text;
+
+    // Convert URLs to Markdown links
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    markdown = markdown.replace(urlRegex, (url) => `[Link](${url})`);
+
+    // Example: Convert lines starting with "Header" to Markdown headers
+    markdown = markdown.replace(/^Header (.+)$/gm, (match, p1) => `## ${p1}`);
+
+    // Add more formatting rules as needed
+
+    return markdown;
 }
 
 // Download Transcription as Markdown
