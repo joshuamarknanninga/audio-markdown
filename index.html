@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio to Markdown Transcriber</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Audio to Markdown Transcriber</h1>
+        
+        <div class="controls">
+            <button id="start-record-btn">Start Recording</button>
+            <button id="stop-record-btn" disabled>Stop Recording</button>
+            <button id="upload-audio-btn">Upload Audio</button>
+            <input type="file" id="audio-upload" accept="audio/*" style="display: none;">
+        </div>
+
+        <div class="transcription">
+            <h2>Transcription (Markdown)</h2>
+            <textarea id="transcript" placeholder="Your transcription will appear here..." readonly></textarea>
+        </div>
+
+        <div class="download">
+            <button id="download-btn" disabled>Download Markdown</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
